@@ -1,6 +1,13 @@
 # Intergrate HTML with Flask
 # HTTP verb GET and POST
 
+# Jinja2 Template Engine
+
+'''
+{%...%} for loops, Conditional Statements
+{{...}} for Expressions to print to the template output
+{#...#} for Comments not included in the template output
+'''
 from flask import Flask, redirect, url_for, render_template, request
 
 ## WSGI Application
@@ -14,12 +21,13 @@ def welcome():
 # Variable Rules and URL Building
 @app.route('/success/<int:score>')
 def success(score):
-    res=""
-    if score>=50:
-        res = 'PASS'
+    res = ''
+    if score >= 50:
+        res = 'Passed'
     else:
-        res = 'FAIL'
-    return render_template('result.html', result=res)
+        res = 'Failed'
+    exp = {'score':score, 'result':res}
+    return render_template('result.html', result=exp)
 
 @app.route('/fail/<int:score>')
 def failed(score):
