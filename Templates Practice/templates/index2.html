@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template CF</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <ul>
+        {% for item in my_lst %}
+        <li>{{item}}</li>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for pup in puppies %}
+        <li>{{pup}}</li>
+        {% endfor %}
+    </ul>
+
+    {% if 'Sammy' in puppies %}
+        <p>Found you Sammy</p>
+    {% else %}
+        <p>Sammy is not here</p>
+    {% endif %}
+
+    <!-- Real Use Case Example -->
+    {% if user_logged_in %}
+        <h2>Welcome back! You are logged in!</h2>
+    {% else %}
+        <h2>Please log in!</h2>
+    {% endif %}
+</body>
+</html>
