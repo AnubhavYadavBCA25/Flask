@@ -1,0 +1,9 @@
+Imp: Make sure we are at same directory where our file exist.
+
+1. $env:FLASK_APP= 'file_name.py' {ex: basic.py}
+
+2. flask db init
+
+3. flask db migrate -m "Message"
+
+4. flask db upgrade
