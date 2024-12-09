@@ -7,3 +7,6 @@ Imp: Make sure we are at same directory where our file exist.
 3. flask db migrate -m "Message"
 
 4. flask db upgrade
+
+## For existing db
+Step 1 and then 3 cont.
